@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title></title>
+	<title>MIDI.js - Sequencing in Javascript.</title>
 	<!-- midi.js css -->
 	<link href="./css/MIDIPlayer.css" rel="stylesheet" type="text/css" />
 	<!-- shim -->
@@ -32,20 +32,16 @@
 	<script src="./inc/event.js" type="text/javascript"></script>
 </head>
 <body>
-	
+	<h1>MIDI.js - Sequencing in Javascript.</h1>
 	<div style="position: fixed; top: 0; left: 0; z-index: 4; overflow: hidden;" id="colors"></div>
 	<div style="text-align: center; position: absolute; top: -70px; left: -40px; opacity: 0.9" id="colors"></div>
 	<div style="margin-bottom: 50px; border: 1px solid #000; background: rgba(255,255,255,0.5); border-radius: 11px; float: left; width: 800px; padding-bottom: 15px; position: relative; z-index: 2;">
 		<div class="player" style="height: 42px; box-shadow: 0 -1px #000; margin-bottom: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
 			<div style="margin: 0 auto; width: 160px; float: right;">
 				<input type="image" src="./images/pause.png" align="absmiddle" value="pause" onclick="pausePlayStop()" id="pausePlayStop">
-				<button id="bpause">Pause</button>
 				<input type="image" src="./images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
-				<button id="bstop">Stop</button>
 				<input type="image" src="./images/backward.png" align="absmiddle" value="stop" onclick="player.getNextSong(-1);">
-				<button id="bback">Back</button>
 				<input type="image" src="./images/forward.png" align="absmiddle" value="stop" onclick="player.getNextSong(+1);">
-			<button id="bforward">Forward</button>
 			</div>
 			<div class="time-controls" style="float: left; margin: 0; position: relative; top: 5px;">
 				<span id="time1" class="time">0:00</span>
@@ -56,6 +52,40 @@
 			</div>
 		</div>
 		<div id="title" style="background: rgba(255,255,0,0.5); position: relative;color: #000; z-index: -1;padding: 5px 11px 5px;">Loading API...</div>
+		<h3 style="margin: 0">What&rsquo;s all this hubub?</h3>
+		<p><b><a href="https://github.com/mudcube/MIDI.js">MIDI.js</a></b> ties together, and builds upon frameworks that bring MIDI to the browser. Combine it with <a href="https://github.com/gasman/jasmid">jasmid</a> to create a web-radio MIDI stream similar to this demo, or with <a href="https://github.com/mrdoob/three.js/">Three.js</a>, <a href="https://github.com/zz85/sparks.js/">Sparks.js</a>, or <a href="http://glslsandbox.com">GLSL</a> to create Audio/visual experiments. Piano/guitar
+			simulations, Drum machines, MIDI recording, and all kinds of certified funkitude is within your grasps!
+			<p><a href="https://www.google.com/chrome">Google Chrome</a> is recommended for best listening experience, it&rsquo;s timing perfection! Firefox and Safari can both perform a bit more like the piano has been drinking, arrr.</p>
+			<p>Carpe beerum, and <a href="https://github.com/mudcube/MIDI.js">commandeer</a> yer own copy!</p>
+			<p><a href="../README.md" target="_blank">Documentation</a>
+			<h3>Basic Examples</h3>
+			<ol>
+				<li><a href="./Basic.html" target="_blank">Basic (play note)</a></li>
+				<li><a href="./MIDIPlayer.html" target="_blank">MIDI Player</a></li>
+				<li><a href="./WhitneyMusicBox.html" target="_blank">Whitney Music Box</a></li>
+			</ol>
+			<h3>Demos</h3>
+			<ol>
+				<li><a href="http://mudcu.be/piano/" target="_blank">Color Piano</a> by Michael Deal <a href="http://mudcu.be/">mudcube</a></li>
+				<li><a href="http://www.rgba.org/r3d/3d-piano-player/" target="_blank">3D Piano Player w/ Three.js</a> by Borja Morales @reality3d</li>
+				<li><a href="http://labs.uxmonk.com/simon-says/" target="_blank">Simon Says</a> by Daniel Christopher <a href="http://uxmonk.com/">uxmonk</a></li>
+				<li><a href="http://labs.uxmonk.com/brite-lite/" target="_blank">Brite Lite</a> by Daniel Christopher <a href="http://uxmonk.com/">uxmonk</a></li>
+				<li><a href="http://qiao.github.com/euphony/" target="_blank">Euphony 3D Piano</a> by Xueqiao Xu @qiao</li>
+				<li><a href="http://my.vexflow.com/articles/53" target="_blank">VexFlow</a> by Mohit Muthanna @11111110b</li>
+				<li><a href="http://spiral.qet.me/" target="_blank">Spiral Keyboard</a> by Patrick Snels</li>
+				<li><a href="http://labs.uxmonk.com/simon-says/" target="_blank">Whitney Music Box</a> by <a href="http://www.krazydad.com/">KrazyDad</a></li>
+				<li><a href="http://online-compute.rhcloud.com/ragamroll/" target="_blank">Ragamroll</a> by Mani Balasubramanian</li>
+			</ol>
+			<h3>Many thanks to the authors of these libraries!</h3>
+			<li><a href="http://dev.w3.org/html5/spec/Overview.html">&lt;audio&gt;</a>: &nbsp;HTML5 specs</li>
+			<li><a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">WebAudio API</a>: &nbsp;W3C proposal by Google</li>
+			<li><a href="http://www.w3.org/TR/webmidi/">WebAudio API Shim</a></li>
+			<li><a href="http://www.w3.org/TR/webmidi/">WebMIDI API</a></li>
+			<li><a href="http://www.w3.org/TR/webmidi/">WebMIDI API Shim</a></li>
+			<li><a href="http://www.schillmania.com/projects/soundmanager2/">SoundManager2</a> by <a href="http://schillmania.com">Scott Schiller</a> (Flash fallback)
+			</li>
+			<li><a href="https://github.com/gasman/jasmid">jasmid</a>: &nbsp;MIDI file byte-code reader, and translats into a Javascript array.</li>
+			<li><a href="http://blog.danguer.com/2011/10/24/base64-binary-decoding-in-javascript/">Base64binary.js</a>: &nbsp;Converts base64 soundfonts to binary for Web Audio API.</li>
 	</div>
 
 <script type="text/javascript">
@@ -131,7 +161,7 @@
 					}
 				});
 				///
-				//ColorSphereBackground();
+				ColorSphereBackground();
 				MIDIPlayerPercentage(player);
 			}
 		});
@@ -181,7 +211,90 @@
 		});
 	};
 	
-
+	var ColorSphereBackground = function() {
+		var d = document;
+		var canvas = document.createElement("canvas");
+		var ctx = canvas.getContext("2d");
+		canvas.style.cssText = "position: fixed; left: 0; top: 0; opacity: 1";
+		canvas.style.width = window.innerWidth + "px";
+		canvas.style.height = window.innerHeight + "px";
+		document.body.appendChild(canvas);
+		//
+		eventjs.add(window, "resize", function() {
+			canvas.style.width = window.innerWidth + "px";
+			canvas.style.height = window.innerHeight + "px";
+			ctx.drawImage(theSphere = sphere(percent), 0, 0)
+		});
+		eventjs.add(d, "scroll", function(e) {
+			var percent = 1 - document.body.scrollTop / document.body.scrollHeight;
+			ctx.drawImage(theSphere = sphere(percent), 0, 0);
+			onMouseMove();
+		});
+		var theSphere;
+		var px = window.innerWidth / 2;
+		var py = window.innerHeight / 2;
+		var onMouseMove = function(event) {
+			ctx.drawImage(theSphere, 0, 0);
+			if (event) {
+				var coords = eventjs.proxy.getCoord(event);
+				coords.x -= document.body.scrollLeft;
+				coords.y -= document.body.scrollTop;
+				px = coords.x;
+				py = coords.y;
+			} else { // 
+				var coords = {
+					x: px,
+					y: py
+				};
+			}
+			//
+			var x = (coords.x / window.innerWidth) * 255 - 127; // grab mouse pixel coords, center at midpoint
+			var y = (coords.y / window.innerHeight) * 255 - 127;
+			var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height); // get image data
+			var data = imageData.data;
+			for (var n = 0, length = data.length; n < length; n += 4) {
+				data[n] = data[n] + x - y; // red (control left)
+				data[n + 1] = data[n + 1] - x - y; // green (control right)
+				data[n + 2] = data[n + 2] + y + y; // blue (control down)
+			}
+			ctx.putImageData(imageData, 0, 0);
+		};
+		eventjs.add(d, "mousemove", onMouseMove);
+		///
+		function sphere(top) { // create Sphere image, and apply to <canvas>
+			var canvas1 = document.createElement("canvas");
+			var ctx = canvas1.getContext("2d");
+			var w = 75;
+			var left = -20;
+			var top = top * -50;
+			canvas.width = canvas1.width = w * window.innerWidth / window.innerHeight;
+			canvas.height = canvas1.height = w;
+			ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+			n = 360;
+			while (n--) { // go through hues
+				var x = left + w;
+				var y = top + w;
+				var g = ctx.createLinearGradient(x, top, x, y);
+				g.addColorStop(0, "#000");
+				g.addColorStop(.5, "hsl(" + ((n + 60) % 360) + ",100%,50%)");
+				g.addColorStop(1, "#FFF");
+				ctx.beginPath(); // draw triangle
+				ctx.moveTo(x, top);
+				ctx.lineTo(x, y);
+				ctx.lineTo(x + 2, y);
+				ctx.lineTo(x + 5, top);
+				ctx.fillStyle = g; // apply gradient
+				ctx.fill();
+				ctx.translate(x, y); // rotate + translate into position
+				ctx.rotate((1 / 360) * Math.PI * 2);
+				ctx.translate(-x, -y);
+			}
+			return canvas1;
+		};
+		//
+		var percent = 1 - document.body.scrollTop / document.body.scrollHeight;
+		ctx.drawImage(theSphere = sphere(percent), 0, 0)
+	};
 	
 	// Begin loading indication.
 	var player;
